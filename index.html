@@ -8,33 +8,12 @@
 <script src="https://threejsfundamentals.org/threejs/resources/threejs/r105/js/loaders/GLTFLoader.js"></script>
   
   
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
-
+   
   
   <link rel="stylesheet" href="./style.css">
   
   
-  <script>
-            AFRAME.registerComponent('videohandler', {
-                init: function () {
-                    var marker = this.el;
-                    this.vid = document.querySelector("#vid");
-
-                    marker.addEventListener('markerFound', function () {
-                        this.toggle = true;
-                        this.vid.play();
-                    }.bind(this));
-
-                    marker.addEventListener('markerLost', function () {
-                        this.toggle = false;
-                        this.vid.pause();
-                    }.bind(this));
-                },
-            });
-        </script>
+  
 
 </head>
 <body>
@@ -42,7 +21,7 @@
 <canvas id="c"></canvas>
 <!-- partial -->
   <script  src="./script.js"></script>
-<script  src="./script2.js"></script>
+
 
 </body>
 </html>
