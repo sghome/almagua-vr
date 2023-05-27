@@ -60,8 +60,8 @@ body {
   --message: "Tick to open";
   --bg: transparent;
   position: fixed;
-  top: 50;
-  left: 30;
+  top: 0;
+  left: 0;
   margin: 1em;
 }
 .checkbox:checked {
