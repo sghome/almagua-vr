@@ -57,7 +57,7 @@ body {
   -moz-appearance: none;
   cursor: pointer;
   color: cyan;
-  --message: "Tick to open";
+  --message: "";
   --bg: transparent;
   position: fixed;
   top: 0;
@@ -66,7 +66,7 @@ body {
 }
 .checkbox:checked {
   --bg: unset;
-  --message: "Untick to close";
+  --message: "";
 }
 .checkbox:before, .checkbox:after {
   content: "";
