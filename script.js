@@ -6,9 +6,9 @@ function main() {
   const canvas = document.querySelector('#c');
   const renderer = new THREE.WebGLRenderer({canvas});
 
-  const camera = new THREE.PerspectiveCamera(25, window.innerWidth / window.innerHeight, 0.1, 1000);
-  camera.position.z = 9;
-  camera.position.y = 1;
+  const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+  camera.position.z = 15;
+  camera.position.y = 5;
 
   const controls = new THREE.OrbitControls(camera, canvas);
 
@@ -32,7 +32,7 @@ function main() {
     const boxCenter = box.getCenter(new THREE.Vector3());
 
     // update the Trackball controls to handle the new size
-    controls.maxDistance = boxSize * 2;
+    controls.maxDistance = boxSize * 10;
     controls.target.copy(boxCenter);
     controls.update();
   });
