@@ -288,38 +288,6 @@ opacity:1.0;
 
 
 
-.checkbox {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  cursor: pointer;
-  color: cyan;
-  --message: "Tick to open";
-  --bg: transparent;
-  position: fixed;
-  top: 0;
-  left: 0;
-  margin: 1em;
-}
-.checkbox:checked {
-  --bg: unset;
-  --message: "Untick to close";
-}
-.checkbox:before, .checkbox:after {
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-}
-.checkbox:before {
-  padding: 0.5em;
-  background: var(--bg, cyan);
-  border: 0.063rem solid;
-}
-.checkbox:after {
-  content: var(--message);
-  color: #fff;
-  margin-left: 0.5em;
-}
 
 .message_container {
   filter: drop-shadow(0 0 0.5rem cyan);
