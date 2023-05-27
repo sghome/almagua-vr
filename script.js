@@ -1,6 +1,6 @@
 'use strict';
 
-/* global AFRAME, navigator */
+/* global THREE, navigator */
 
 function main() {
   const canvas = document.querySelector('#c');
@@ -13,6 +13,11 @@ function main() {
   const controls = new THREE.OrbitControls(camera, canvas);
 
   const scene = new THREE.Scene();
+
+  // Ambient Lighting
+  const light = new THREE.AmbientLight(0x404040, 10);
+  light.castShadows = true;
+  scene.add(light);
 
   const gltfLoader = new THREE.GLTFLoader();
   gltfLoader.load('https://cdn.glitch.global/bc9e29ba-1909-42ee-b83b-b1246375e094/almagua.glb', (gltf) => {
@@ -62,23 +67,16 @@ function main() {
     // Access the user's camera
     navigator.mediaDevices.getUserMedia({ video: true })
       .then((stream) => {
-        const videoElement = document.createElement('video');
-        videoElement.src = 'https://cdn.glitch.me/bc9e29ba-1909-42ee-b83b-b1246375e094/360.mp4';
-        videoElement.setAttribute('playsinline', '');
-        videoElement.setAttribute('webkit-playsinline', '');
-        videoElement.setAttribute('crossorigin', 'anonymous');
-        videoElement.loop = true;
-        videoElement.play();
-
-        const videoTexture = new THREE.VideoTexture(videoElement);
+        const videoTexture = new THREE.VideoTexture(stream);
         videoTexture.minFilter = THREE.LinearFilter;
         videoTexture.magFilter = THREE.LinearFilter;
         videoTexture.format = THREE.RGBFormat;
 
-        const videoMaterial = new THREE.MeshBasicMaterial({ map: videoTexture, side: THREE.DoubleSide });
+        const videoMaterial = new THREE.MeshBasicMaterial({ map: videoTexture });
 
         const videoPlaneGeometry = new THREE.PlaneGeometry(16 / 9, 1.5);
         const videoPlaneMesh = new THREE.Mesh(videoPlaneGeometry, videoMaterial);
+        videoPlaneMesh.position.z = -10;
         scene.add(videoPlaneMesh);
 
         render();
