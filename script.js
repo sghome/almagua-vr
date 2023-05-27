@@ -1,6 +1,6 @@
 'use strict';
 
-/* global THREE, navigator */
+/* global AFRAME, navigator */
 
 function main() {
   const canvas = document.querySelector('#c');
@@ -62,12 +62,20 @@ function main() {
     // Access the user's camera
     navigator.mediaDevices.getUserMedia({ video: true })
       .then((stream) => {
-        const videoTexture = new THREE.VideoTexture(stream);
+        const videoElement = document.createElement('video');
+        videoElement.src = 'https://cdn.glitch.me/bc9e29ba-1909-42ee-b83b-b1246375e094/360.mp4';
+        videoElement.setAttribute('playsinline', '');
+        videoElement.setAttribute('webkit-playsinline', '');
+        videoElement.setAttribute('crossorigin', 'anonymous');
+        videoElement.loop = true;
+        videoElement.play();
+
+        const videoTexture = new THREE.VideoTexture(videoElement);
         videoTexture.minFilter = THREE.LinearFilter;
         videoTexture.magFilter = THREE.LinearFilter;
         videoTexture.format = THREE.RGBFormat;
 
-        const videoMaterial = new THREE.MeshBasicMaterial({ map: videoTexture, transparent: true });
+        const videoMaterial = new THREE.MeshBasicMaterial({ map: videoTexture, side: THREE.DoubleSide });
 
         const videoPlaneGeometry = new THREE.PlaneGeometry(16 / 9, 1.5);
         const videoPlaneMesh = new THREE.Mesh(videoPlaneGeometry, videoMaterial);
