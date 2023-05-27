@@ -14,11 +14,6 @@ function main() {
 
   const scene = new THREE.Scene();
 
-  // Ambient Lighting
-  const light = new THREE.AmbientLight(0x404040, 10);
-  light.castShadows = true;
-  scene.add(light);
-
   const gltfLoader = new THREE.GLTFLoader();
   gltfLoader.load('https://cdn.glitch.global/bc9e29ba-1909-42ee-b83b-b1246375e094/almagua.glb', (gltf) => {
     const root = gltf.scene;
@@ -72,11 +67,10 @@ function main() {
         videoTexture.magFilter = THREE.LinearFilter;
         videoTexture.format = THREE.RGBFormat;
 
-        const videoMaterial = new THREE.MeshBasicMaterial({ map: videoTexture });
+        const videoMaterial = new THREE.MeshBasicMaterial({ map: videoTexture, transparent: true });
 
         const videoPlaneGeometry = new THREE.PlaneGeometry(16 / 9, 1.5);
         const videoPlaneMesh = new THREE.Mesh(videoPlaneGeometry, videoMaterial);
-        videoPlaneMesh.position.z = -10;
         scene.add(videoPlaneMesh);
 
         render();
