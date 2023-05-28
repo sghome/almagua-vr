@@ -424,13 +424,7 @@ opacity:1.0;
   padding: 2px 10px 2px 10px;
 }
 
-.logo {
-  float: left;
-  width: 24px;
-  height: 24px;
-  background: linear-gradient(to bottom right,#feda75, #fa7e1e, #d62976, 	#962fbf);
-  border-radius: 20%;
-}
+
 
 .container {
   width: 100%;
