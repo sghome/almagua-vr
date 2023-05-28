@@ -550,8 +550,8 @@ opacity:1.0;
   margin: 0 auto; /* Agrega esta propiedad para centrar horizontalmente */
   display: block; /* Agrega esta propiedad para convertirlo en un elemento de bloque */
   position: absolute; /* Agrega esta propiedad para posicionarlo de forma absoluta */
-  bottom: 0; /* Agrega esta propiedad para colocarlo en la parte inferior */
-  left: 0; /* Agrega esta propiedad para colocarlo en la esquina izquierda */
+  bottom: 90; /* Agrega esta propiedad para colocarlo en la parte inferior */
+  left: 50; /* Agrega esta propiedad para colocarlo en la esquina izquierda */
 }
 
 .instagram:hover {
