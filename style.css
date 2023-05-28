@@ -37,7 +37,7 @@ canvas {
 body {
   --clientWidth: 1920;
   --s: calc(var(--clientWidth) / 1920);
-  --gold: url('https://cdn.glitch.global/bc9e29ba-1909-42ee-b83b-b1246375e094/Almagua.png?v=1685133580179');
+  --gold:  #eda725;
   --gold88: rgba(255, 215, 0, 0.53);
   --goldDark: #eda725;
  
