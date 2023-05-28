@@ -106,111 +106,24 @@ target[0].innerHTML = '<div class="display"><div class="logo"><div class="contai
 
 
 
-var imageWidth = 2048,
-    imageHeight = 1364,
-    imageAspectRatio = imageWidth / imageHeight,
-    $window = $(window);
 
-var hotSpots = [{
-  'title': 'Fermentation',
-  'description': 'This is the fermentation room.',
-  'x': -230,
-  'y': -228
-}, {
-  'title': 'Tasting Room',
-  'description': 'The tastiest room of the winery',
-  'x': 153,
-  'y': 23
-}, {
-  'title': 'Barrel Room',
-  'description': 'There are a lot of barrels here',
-  'x': 220,
-  'y': -240
-}, {
-  'title': 'Entrance',
-  'description': 'This is the Entrance',
-  'x': -370,
-  'y': 233
-}];
 
-function appendHotSpots() {
-  for (var i = 0; i < hotSpots.length; i++) {
-    var $hotSpot = $('<div>').addClass('hot-spot');
-    $('.container').append($hotSpot);
-  }
-  positionHotSpots();
-}
 
-function appendSpeechBubble() {
-  var $speechBubble = $('<div>').addClass('speech-bubble');
-  $('.container').append($speechBubble);
-}
+function initHotspot() {
+  document.querySelectorAll(".hotspot-container").forEach(hotspot => {
+    const imgWidth = hotspot.querySelector("img").width;
+    const imgHeight = hotspot.querySelector("img").height;
 
-function handleHotSpotMouseover(e) {
-  var $currentHotSpot = $(e.currentTarget),
-      currentIndex = $currentHotSpot.index(),
-      $speechBubble = $('.speech-bubble'),
-      title = hotSpots[currentIndex]['title'],
-      description = hotSpots[currentIndex]['description'],
-      hotSpotTop = $currentHotSpot.offset().top,
-      hotSpotLeft = $currentHotSpot.offset().left,
-      hotSpotHalfSize = $currentHotSpot.width() / 2,
-      speechBubbleHalfSize = $speechBubble.width() / 2,
-      topTarget = hotSpotTop - $speechBubble.height(),
-      leftTarget = (hotSpotLeft - (speechBubbleHalfSize)) + hotSpotHalfSize;
-  
-  $speechBubble.empty();
-  $speechBubble.append($('<h1>').text(title));
-  $speechBubble.append($('<p>').text(description));
-  
-  $speechBubble.css({
-    'top': topTarget - 20,
-    'left': leftTarget,
-    'display': 'block'
-  }).stop().animate({
-    opacity: 1
-  }, 200);
-}
-
-function handleHotSpotMouseout(){
-  var $speechBubble = $('.speech-bubble');
-  $speechBubble.stop().animate({
-    opacity: 0
-  }, 200, function(){
-    $speechBubble.hide();
-  });
-}
-
-function positionHotSpots() {
-  var windowWidth = $window.width(),
-    windowHeight = $window.height(),
-    windowAspectRatio = windowWidth / windowHeight,
-    $hotSpot = $('.hot-spot');
-
-  $hotSpot.each(function(index) {
-    var xPos = hotSpots[index]['x'],
-        yPos = hotSpots[index]['y'],
-        desiredLeft = 0,
-        desiredTop = 0;
-
-    if (windowAspectRatio > imageAspectRatio) {
-      yPos = (yPos / imageHeight) * 100;
-      xPos = (xPos / imageWidth) * 100;
-    } else {
-      yPos = ((yPos / (windowAspectRatio / imageAspectRatio)) / imageHeight) * 100;
-      xPos = ((xPos / (windowAspectRatio / imageAspectRatio)) / imageWidth) * 100;
-    }
-
-    $(this).css({
-      'margin-top': yPos + '%',
-      'margin-left': xPos + '%'
+    hotspot.querySelectorAll(".hotspot").forEach(h => {
+      h.style.top =
+        parseInt(h.querySelector(".y").innerText) / 100 * imgHeight + "px";
+      h.style.left =
+        parseInt(h.querySelector(".x").innerText) / 100 * imgWidth + "px";
     });
-
   });
 }
 
-appendHotSpots();
-appendSpeechBubble();
-$(window).resize(positionHotSpots);
-$('.hot-spot').on('mouseover', handleHotSpotMouseover);
-$('.hot-spot').on('mouseout', handleHotSpotMouseout);
+window.addEventListener("resize", initHotspot);
+
+window.onload = initHotspot;
+//initHotspot();
