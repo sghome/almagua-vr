@@ -106,31 +106,4 @@ target[0].innerHTML = '<div class="display"><div class="logo"><div class="contai
 
 
 
- function windowSizeCheck() {
-   console.log('window size check fired');
-   
-   var $hotspot = $('.hotspot');
-   
-   $hotspot.off('click.mobile'); // Prevent duplicate bindings
-   
-   if ($(window).width() < '768') {
-     $hotspot.on('click.mobile', function(e) {
-       e.preventDefault();
-       var $thisHotspot = $(this);
-       $hotspot.not($(this)).removeClass('visible');
-       if ($thisHotspot.hasClass('visible')) {
-         $thisHotspot.removeClass('visible');
-       } else{
-         $thisHotspot.addClass('visible');
-       }
-     });
-   }
- }
-
-jQuery(document).ready(function($) {
-  windowSizeCheck();
-  $(window).resize(windowSizeCheck);
-});
-
-
 
