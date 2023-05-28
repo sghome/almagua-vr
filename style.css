@@ -454,4 +454,119 @@ opacity:1.0;
 
 
 
+.image-container {
+  position:relative;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  max-width: 894px;
+  height: auto;
+}
+
+.hotspot {
+  position: absolute;
+  display: inline-block;
+  line-height: 0;
+  width: 4.475%;
+  max-width: 40px;
+  svg {
+    width: 100%;
+    height: auto;
+    transition: fill 250ms;
+    title {
+      display: none;
+    }
+  }
+  
+  // mobile click state
+  &.visible {
+    @media  screen and  (max-width: 767px)  {
+      .tooltip {
+        opacity: 1;  
+      }
+      svg {
+        circle {
+          fill: gray;
+        }
+      }
+    }
+  }
+ 
+  // hover for desktop
+  @media  screen and  (min-width: 768px)  {
+    &:hover {
+      svg {
+        circle {
+          fill: gray;
+        }
+      }
+      .tooltip {
+        opacity: 1;
+      }
+    }
+  }
+  
+}
+
+// general tool tip style
+.tooltip {
+  position: absolute;
+  width: 170px;
+  height: 97px;
+  box-sizing: border-box;
+  background-color: #FFF;
+  padding: 15px 20px;  
+  box-shadow: 0 0 5px 0 rgba(0,0,0,0.12), inset 0 1px 3px 0 rgba(0,0,0,0.50);
+  border-radius: 5px;
+  border: 1px solid #979797;
+  opacity: 0;
+  transition: opacity 250ms;
+  
+  // active tooltip
+  left: 50%;
+  transform: translateX(-50%);
+  top: -110px;
+  z-index: 10;
+  
+  p {
+    color: #656972;
+    font-size: 14px;
+    font-family: Arial;
+  }
+}
+
+.tooltip-content {
+  line-height: 1;
+}
+
+
+// specific hotspot style
+.hotspot-1 {
+  left: 17.5%;
+  bottom: 13.85%;
+  .tooltip {
+    // transform: translate(-30%,-170%);
+    // transform-origin: center;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -110px;
+  }
+}
+
+.hotspot-2 {
+  left: 43.25%;
+  bottom: 31%;
+}
+
+.hotspot-3 {
+  left: 66%;
+  bottom: 51%;
+}
+
+
+
+
 
