@@ -107,23 +107,3 @@ target[0].innerHTML = '<div class="display"><div class="logo"><div class="contai
 
 
 
-
-
-function initHotspot() {
-  document.querySelectorAll(".hotspot-container").forEach(hotspot => {
-    const imgWidth = hotspot.querySelector("img").width;
-    const imgHeight = hotspot.querySelector("img").height;
-
-    hotspot.querySelectorAll(".hotspot").forEach(h => {
-      h.style.top =
-        parseInt(h.querySelector(".y").innerText) / 100 * imgHeight + "px";
-      h.style.left =
-        parseInt(h.querySelector(".x").innerText) / 100 * imgWidth + "px";
-    });
-  });
-}
-
-window.addEventListener("resize", initHotspot);
-
-window.onload = initHotspot;
-//initHotspot();
