@@ -116,10 +116,4 @@ target[0].innerHTML = '<div class="display"><div class="logo"><div class="contai
 //
 
 
-$('.msdw-hotspot-slides').slick({
-  arrows: false,
-  dots: true
-});
 
-// http://stackoverflow.com/questions/2851663/how-do-i-simulate-a-hover-with-a-touch-in-touch-enabled-browsers
-document.addEventListener("touchstart", function(){}, true);
