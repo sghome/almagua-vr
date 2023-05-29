@@ -458,7 +458,9 @@ body.anti-aug .aug-exe:after {
   font-size: 18px;
 }
 
-
+.text-container {
+  padding: 2px 0px 0px 2px;
+}
 
 
 
