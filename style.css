@@ -322,7 +322,7 @@ body.anti-aug .aug-exe:after {
 
 .fps-label {
   background: #000000;
-opacity:1.0;
+  opacity:1.0;
   color: #ffffff;
   height: 1.25rem;
   width: 2.188rem;
@@ -429,7 +429,7 @@ opacity:1.0;
   border-radius: 5px;
   margin: 0 auto; /* Agrega esta propiedad para centrar horizontalmente */
   display: block; /* Agrega esta propiedad para convertirlo en un elemento de bloque */
-   bottom: 0; /* Agrega esta propiedad para colocarlo en la parte inferior */
+  bottom: 0; /* Agrega esta propiedad para colocarlo en la parte inferior */
 }
 
 .instagram:hover {
@@ -458,9 +458,7 @@ opacity:1.0;
   font-size: 18px;
 }
 
-.text-container {
-  padding: 2px 0px 0px 34px;
-}
+
 
 
 
