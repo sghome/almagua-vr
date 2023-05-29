@@ -263,8 +263,8 @@ body.anti-aug .aug-exe:after {
 .bg-controls-container2 {
   pointer-events: all;
   position: absolute;
-  bottom: 14rem;
-  left: 55rem;
+  bottom: 9rem;
+  left: 50rem;
   height: 3.125rem;
   width: 18.75rem;
   transform-origin: 0 50%;
