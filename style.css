@@ -419,7 +419,7 @@ body.anti-aug .aug-exe:after {
   pointer-events: all;
   position: absolute;
   bottom: 9%;
-  left: 45%;
+  left: 40%;
   height: 3.125rem;
   width: 18.75rem;
   transform-origin: 0 50%;
