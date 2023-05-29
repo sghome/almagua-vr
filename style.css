@@ -260,16 +260,6 @@ body.anti-aug .aug-exe:after {
 
 
 
-.bg-controls-container2 {
-  pointer-events: all;
-  position: absolute;
-  bottom: 9rem;
-  left: 50rem;
-  height: 3.125rem;
-  width: 18.75rem;
-  transform-origin: 0 50%;
-  transform: rotateY(5deg);
-}
 
 
 
@@ -419,6 +409,28 @@ body.anti-aug .aug-exe:after {
 .link {
   text-decoration: none;
 }
+
+
+
+
+
+
+.bg-controls-container2 {
+  pointer-events: all;
+  position: absolute;
+  
+  
+  
+  bottom: 9%;
+  left: 50%;
+  
+  
+  height: 3.125rem;
+  width: 18.75rem;
+  transform-origin: 0 50%;
+  transform: rotateY(5deg);
+}
+
 
 .instagram {
   width: 120px;
