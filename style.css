@@ -257,6 +257,23 @@ body.anti-aug .aug-exe:after {
   width: 100%;
 }
 
+
+
+
+.bg-controls-container2 {
+  pointer-events: all;
+  position: absolute;
+  bottom: 4rem;
+  left: 5rem;
+  height: 3.125rem;
+  width: 18.75rem;
+  transform-origin: 0 50%;
+  transform: rotateY(5deg);
+}
+
+
+
+
 .diagnostics-info {
   position: absolute;
   top: 0.625rem;
