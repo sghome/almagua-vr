@@ -8,33 +8,12 @@
 <script src="https://threejsfundamentals.org/threejs/resources/threejs/r105/js/loaders/GLTFLoader.js"></script>
   
   
-   <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
+
   
   
   
   <link rel="stylesheet" href="./style.css">
-  
-    <script>
-            AFRAME.registerComponent('videohandler', {
-                init: function () {
-                    var marker = this.el;
-                    this.vid = document.querySelector("#vid");
 
-                    marker.addEventListener('markerFound', function () {
-                        this.toggle = true;
-                        this.vid.play();
-                    }.bind(this));
-
-                    marker.addEventListener('markerLost', function () {
-                        this.toggle = false;
-                        this.vid.pause();
-                    }.bind(this));
-                },
-            });
-        </script>
   
 
 </head>
@@ -62,17 +41,7 @@
               
 	
 	
-		<div class="image">
-		<div class="contain">
-			<a class="hotspot" data-left="10" data-top="34" data-text="Ipsum Fringilla Aenean Bibendum Purus">Navigation System</a>
-			<a class="hotspot" data-left="17" data-top="50" data-text="Dolor Risus Bibendum Vestibulum Ligula">Autoshift</a>
-			<a class="hotspot" data-left="45" data-top="46" data-text="Dapibus Elit Nullam Sit Ligula">Premium Leather</a>
-			<a class="hotspot" data-left="71" data-top="32" data-text="Tellus Nullam Pharetra Ligula Ipsum">Rear Seating</a>
-			<a class="hotspot" data-left="30" data-top="79" data-text="Risus Quam Malesuada Justo Lorem">Seat Controls</a>
-			<div class="hotspots-label"></div>
-		</div>
-	</div>
-              
+	
  
 
 
